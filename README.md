@@ -17,6 +17,8 @@
 
    d. Once you found the device ID by exclusion trial. Save it to `<device>` string in `/etc/systemd/system/disable-mouse-wakeup-service`. The template is provided.
 
-   e. Enable service by `sudo systemctl enable disable-mouse-wakeup.service`.
+   e. Enable service by `sudo systemctl enable disable-mouse-wakeup.service`. and start it by `sudo systemctl start disable-mouse-wakeup-service`.
 
-   e. This makes the change persistent between system reboots.
+   f. Reboot the system.
+
+   g. This makes the change persistent between system reboots.

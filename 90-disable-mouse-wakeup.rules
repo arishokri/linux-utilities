@@ -1,2 +1,0 @@
-# Adding the usb mouse 046d:c52b to exclusion list for hibernate and sleep wakeup.
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b", TEST=="power/control", ATTR{power/control}="auto"

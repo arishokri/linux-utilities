@@ -1,10 +1,11 @@
 [Unit]
 Description=Disable mouse wakeup
-Before=sleep.target
+After=multi-user.target
 
 [Service]
 Type=oneshot
+ExecStartPre=/bin/sleep 5
 ExecStart=/bin/sh -c 'echo "<device>" > /proc/acpi/wakeup'
 
 [Install]
-WantedBy=sleep.target
+WantedBy=multi-user.target
