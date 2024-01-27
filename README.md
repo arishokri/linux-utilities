@@ -1,8 +1,22 @@
-## The path to files placed in this folder will be designated here.
+## Follow the instructions below to activate each of the utilities, services or config files.
 
-1. Place each file in the designated path.
-2. Execute action to enable the file.
-   | File | System Path | Action(s) On Placement |
-   |------|-------------|------------------------|
-   | .bashrc | ~/ | source ~/.bashrc |
-   | 90-disable-mouse-wakeup.rules | /etc/udev/rules.d/ | sudo udevadm control --reload-rules ; system restart |
+### Main bash profile (.bashrc)
+
+1. Place .bashrc in ~/ directory
+2. Run source .bashrc or open a new terminal.
+
+### Preventing mouse wakeup (disable-mouse-wakeup-service)
+
+1. Determine the device ID of you mouse following these steps.
+
+   a. List wakeup devices using `cat /proc/acpi/wakeup`.
+
+   b. Look for device names that start with either `USB` or `XHC`.
+
+   c. Disable one device at a time and test by putting the system to sleep and checking whether the device of interest is prevented from waking the system up. You can disable/enable the wakeup function of the device by `sudo sh -c 'echo "<device>" > /proc/acpi/wakeup'`.
+
+   d. Once you found the device ID by exclusion trial. Save it to `<device>` string in `/etc/systemd/system/disable-mouse-wakeup-service`. The template is provided.
+
+   e. Enable service by `sudo systemctl enable disable-mouse-wakeup.service`.
+
+   e. This makes the change persistent between system reboots.
