@@ -2,4 +2,4 @@
 | File | System Path |
 |----------|----------|
 | .bashrc | ~/ |
-| Cell 3 | Cell 4 |
+| 90-disable-mouse-wakeup.rules | /etc/udev/rules.d/ |
