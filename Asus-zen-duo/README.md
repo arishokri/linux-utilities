@@ -1,3 +1,5 @@
+# Tools for Asus Zenbook Duo UX482EA
+
 You can find a few useful tweaks and driver workaround/fixes in [this repo](https://github.com/alesya-h/zenbook-duo-2024-ux8406ma-linux).
 
 Most of these are aimed for Gnome.

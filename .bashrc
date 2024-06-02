@@ -1,4 +1,6 @@
-# Initializing SSH agents and keys
+## SSH agent initialization.
+# Do not use the following lines if you're using the ssh-agent service.
+# Initializing SSH agents and keys if you're not using the service.
 # starting ssh agent
 if [ -z "$SSH_AUTH_SOCK" ] || [ -z "$SSH_AGENT_PID" ]; then 
   eval "$(ssh-agent -s)"
