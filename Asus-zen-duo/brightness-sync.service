@@ -1,0 +1,12 @@
+[Service]
+Description=Sync Brightness of Duo Screens
+After=network.target
+StartLimitIntervalSec=0[Service]
+Type=simple
+Restart=always
+RestartSec=1
+## Change the path here.
+ExecStart=/home/ari/custom_scripts/zenbook-duo-funcs/duo-functions watch-backlight
+
+[Install]
+WantedBy=multi-user.target

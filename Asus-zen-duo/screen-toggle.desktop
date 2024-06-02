@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+## Change the path to the executable here.
+Exec=/home/ari/custom_scripts/zenbook-duo-funcs/duo-functions toggle
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=My Script
+Name=My Script
+Comment[en_US]=Runs my custom script at startup
+Comment=Runs my custom script at startup
+
