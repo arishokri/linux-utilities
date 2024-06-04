@@ -25,7 +25,7 @@ The removal of detachable keyboard by default does not trigger on-off switch of 
     c. For setting the shortcut, attach and detach the keyboard so it registers it as the keybinding.
     d. Press add.
     e. Log out and log back in.
-9. In order to automatically disable the bottom screen at the GUI login, modify the `screen-toggle.desktop` and put it in the `nano ~/.config/autostart/` directory (create if doesn't exist).
+9. In order to automatically disable the bottom screen at the GUI login, modify the `screen-toggle.desktop` and put it in the `~/.config/autostart/` directory (create if doesn't exist).
 
 ## Brightness Sync
 Normally you can only change the brightness of the upper display and have to GUI control over the brightness of the bottom display.
