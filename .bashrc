@@ -15,3 +15,7 @@ else
   echo "SSH agent has identity(s):"
   ssh-add -l
 fi
+## Custom shortcuts
+# Setting and removing charge_limits on battery
+alias battery_preserve_on='sudo sh -c "echo 85 > /sys/class/power_supply/BAT0/charge_control_end_threshold"'
+alias battery_preserve_off='sudo sh -c "echo 99 > /sys/class/power_supply/BAT0/charge_control_end_threshold"'
