@@ -8,6 +8,16 @@ There are additional hardware-specific or distro-specific directories.
 1. You may find additional functionalities in the `.bashrc` file. You can add them to your own `~/.bashrc`. 
 2. Run source .bashrc or open a new terminal to make the changes effective.
 
+## Time zone override in dual boot with Windows
+This resolves the issue with Windows-Linux dual boot where there will be a time zone discrepancy between Windows and Linux everytime you boot from one OS vs. the other.
+
+Windows by default stores time zones in RTC (motherboard's Real-Time Clock) in local time whereas Linux stores them in UTC. You can change the settings of either operating system to make their behavior similar. But the process in Windows is more complicated and potentially causes operating issues so the best course of action is to change this setting in Linux.
+
+Here are the instructions to store RTC time in local time zone on Linux.
+
+1. To check the default settings use `timedatectl` command and check for `RTC in local TZ = no` which should be the default value.
+2. To set the behavior to local time zone use `timedatectl set-local-rtc 1 --adjust-system-clock` and to revert it use `timedatectl set-local-rtc 0 --adjust-system-clock`. 
+
 ## SSH agent service
 The following sets up a service to initialize your ssh agents and add the keys at startup.
 1. Copy the `ssh-agent.service` file to `~/.config/systemd/user`. If the directory does not exist, create it.
