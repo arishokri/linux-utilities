@@ -8,7 +8,7 @@ There are additional hardware-specific or distro-specific directories.
 1. You may find additional functionalities in the `.bashrc` file. You can add them to your own `~/.bashrc`. 
 2. Run source .bashrc or open a new terminal to make the changes effective.
 
-## Time zone override in dual boot with Windows
+## Time Zone Override
 This resolves the issue with Windows-Linux dual boot where there will be a time zone discrepancy between Windows and Linux everytime you boot from one OS vs. the other.
 
 Windows by default stores time zones in RTC (motherboard's Real-Time Clock) in local time whereas Linux stores them in UTC. You can change the settings of either operating system to make their behavior similar. But the process in Windows is more complicated and potentially causes operating issues so the best course of action is to change this setting in Linux.
