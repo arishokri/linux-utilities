@@ -19,7 +19,10 @@ Here are the instructions to store RTC time in local time zone on Linux.
 2. To set the behavior to local time zone use `timedatectl set-local-rtc 1 --adjust-system-clock` and to revert it use `timedatectl set-local-rtc 0 --adjust-system-clock`. 
 
 ## SSH agent service
+If your distribution does not automatically handle initialization of ssh keys, you need to create a service to accomplish that.
+
 The following sets up a service to initialize your ssh agents and add the keys at startup.
+
 1. Copy the `ssh-agent.service` file to `~/.config/systemd/user`. If the directory does not exist, create it.
 2. Run The following:
 ```bash
@@ -28,7 +31,6 @@ systemctl --user enable ssh-agent
 systemctl --user start ssh-agent
 ```
 3. Now you can add your ssh keys to the agent using `ssh-add`.
-4. If you generate the `ssh-keygen` after the above and put the keys in `~/.ssh` directory, most distros automatically add the keys to the agent.
 
 ## Battery Charge Threshold
 For details on the following see [this article](https://ubuntuhandbook.org/index.php/2024/02/limit-battery-charge-ubuntu/).
