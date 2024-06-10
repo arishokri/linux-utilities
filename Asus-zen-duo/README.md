@@ -59,3 +59,12 @@ username ALL=(ALL) NOPASSWD: /usr/bin/inotifywait -e modify /sys/class/backlight
 * You can also copy the `brightness-sync-service` to `/etc/systemd/system/` and start a service.
 * But I want more control over this function and I might not always want to have this service running. So instead I add the functionalities directly to the `.bashrc` provided here.
 * Make sure that these functions are **executed as `sudo` (see above)**.
+
+## Disable VRR
+If Variable Refresh Rate (VRR) for the screen is causing any issues with the system or eyes trains, you can follow these steps to disable it on startup. We basically need to pass `i915.enable_psr=0 amdgpu.vrr_support=0` to kernel on startup.
+
+1. Edit the GRUB config file in `/etc/default/grub`.
+2. Find the line that starts with `GRUB_CMDLINE_LINUX_DEFAULT` and add the following to the end of the line: `i915.enable_psr=0`. So it should look like this `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.enable_psr=0"`.
+3. Update GRUB using `sudo update-grub`.
+4. Reboot the system.
+5. Make sure the command is passed to kernel by `cat /proc/cmdline`.
