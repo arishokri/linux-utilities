@@ -1,16 +1,17 @@
 
 ####################################################################
-### custom functions and settings.
-## backlight management
+### Custom functions and settings.
+## Backlight management
+
 # Function to sync backlight
-function sync-backlight {
+function backlight-sync {
   cat "/sys/class/backlight/intel_backlight/brightness" |
     sudo tee /sys/class/backlight/card1-eDP-2-backlight/brightness
 }
 
 # Function to watch backlight
 # This function requires installation of inotifywait-tools.
-function watch-backlight {
+function backlight-watch-start {
   # Check if the watch-backlight process is already running
   if pgrep -f "inotifywait -e modify /sys/class/backlight/intel_backlight/brightness" > /dev/null; then
     echo "watch-backlight is already running."
@@ -29,12 +30,13 @@ function watch-backlight {
 }
 
 # Function to stop watch-backlight
-function stop-watch-backlight {
+function backlight-watch-stop {
   pkill -f "inotifywait -e modify /sys/class/backlight/intel_backlight/brightness"
   echo "watch-backlight stopped."
 }
 
 # Export functions to make them available in all shell sessions
-export -f sync-backlight
-export -f watch-backlight
-export -f stop-watch-backlight
+export -f backlight-sync
+export -f backlight-watch-start
+export -f backlight-watch-stop
+
