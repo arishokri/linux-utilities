@@ -31,6 +31,16 @@ systemctl --user enable ssh-agent
 systemctl --user start ssh-agent
 ```
 3. Now you can add your ssh keys to the agent using `ssh-add`.
+4. If after following the above the ssh agent is not automatically launching on system reboot:
+
+  a. Add the following to the `.bashrc` file.
+  ```bash
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+  ```
+  b. Restart the service:
+  ```bash
+  systemctl --user restart ssh-agent
+  ```
 
 ## Battery Charge Threshold
 For details on the following see [this article](https://ubuntuhandbook.org/index.php/2024/02/limit-battery-charge-ubuntu/).
